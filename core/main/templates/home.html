@@ -1,0 +1,12 @@
+<div class="col-lg-6">
+    <label>Category</label>
+    <select name="sub_category" class="form-control">
+        {% for category in categories %}
+            <optgroup  label={{ category.category.title }}>
+            {% for sub_cat in category.sub_category %}
+                <option value="{{ sub_cat.id }}">{{ sub_cat.title }}</option>
+            {% endfor %}
+              </optgroup>
+        {% endfor %}
+    </select>
+</div>
