@@ -24,7 +24,7 @@ class Shoes(models.Model):
         verbose_name_plural = 'Shoes'
 
 class Brand(models.Model):
-    shoes = models.ForeignKey(Shoes, on_delete=models.CASCADE, related_name='shoes brand name')
+    shoes = models.ForeignKey(Shoes, on_delete=models.CASCADE, related_name='shoes_brand_name')
     name = models.CharField('Brand name', max_length=50)
     about = models.TextField('Brand about')
     img = models.ImageField('Brand image', upload_to='media')
