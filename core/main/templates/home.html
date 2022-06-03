@@ -13,7 +13,7 @@
             <h2>{{ j.name }}</h2>
                  {% for k in j.cat_shoes_brands.all %}
                     <h3> {{ k.name }}</h3>
-                    <img scr = '{{ k.img.url }}'  width = '200px' alt =''>
+                    <img scr = "{{ k.img.url }}"  width = '200px' alt =''>
                 {% endfor %}
         {% endfor %}
     {% endfor %}
