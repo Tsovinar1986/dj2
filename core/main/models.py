@@ -17,7 +17,7 @@ class Category(models.Model):
         verbose_name_plural = 'Categories'
 
 class Product(models.Model):
-    category = models.ForeignKey(Category, on_delete=models.CASCADE, related_name='cat_product')
+    category = models.ForeignKey(Category, on_delete=models.CASCADE, related_name='cat_product_name')
     name = models.CharField('Product  name', max_length=50)
     
     def __str__(self):
@@ -28,7 +28,7 @@ class Product(models.Model):
         verbose_name_plural = 'Products'
 
 class Brand(models.Model):
-    products = models.ForeignKey(Product, on_delete=models.CASCADE, related_name='product_brand')
+    product = models.ForeignKey(Product, on_delete=models.CASCADE, related_name='product_brand_name')
     name = models.CharField('Brand name', max_length=50)
     about = models.TextField('Brand about')
     img = models.ImageField('Brand image', upload_to='media')

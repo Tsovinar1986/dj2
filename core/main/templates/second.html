@@ -3,7 +3,7 @@
 {% block content %}
     {% for i in categories %}
         <h1>{{ i.name }}</h1>
-            {% for j in i.product_brand.all %}
+            {% for j in i.product_brand_name.all %}
                 <h3>{{ j.name }}</h3>
                 <a href="{% url 'category_detail' j.id %}"><img src="{{ j.img.url }}" width="200px" alt=""></a>
             {% endfor %}
