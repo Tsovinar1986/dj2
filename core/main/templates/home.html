@@ -1,21 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>categorys</title>
-</head>
-<body>
-    {% for i in categories %}
-        <h1>{{ i.name }}</h1>
-        {% for j in i.cat_shoes.all %}
-            <h2>{{ j.name }}</h2>
-                 {% for k in j.cat_shoes_brands.all %}
-                    <h3> {{ k.name }}</h3>
-                    <img scr = "{{ k.img.url }}"  width = '200px' alt =''>
-                {% endfor %}
-        {% endfor %}
+{% extends 'base.html' %}
+
+{% block content %}
+    {% for i in categ %}
+        <a href="{% url 'category' i.id %}"><Button>{{ i.name }}</Button></a>
     {% endfor %}
-</body>
-</html>
+{% endblock %}
