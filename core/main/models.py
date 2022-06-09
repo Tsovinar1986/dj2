@@ -1,4 +1,5 @@
 from django.db import models
+from django.urls import reverse
 
 # Create your models here.
 
@@ -7,7 +8,6 @@ class Category(models.Model):
 
      # def get_absolute_url(self):
      #     return reverse('home')
-
 
     def __str__(self):
         return self.name
@@ -31,6 +31,7 @@ class Brand(models.Model):
     product = models.ForeignKey(Product, on_delete=models.CASCADE, related_name='product_brand_name')
     name = models.CharField('Brand name', max_length=50)
     about = models.TextField('Brand about')
+    price = models.IntegerField('Brand price', null=True)
     img = models.ImageField('Brand image', upload_to='media')
 
     def __str__(self):
