@@ -1,8 +1,8 @@
-from distutils.command.upload import upload
 from django import forms
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
-from .models import Product
+from .models import UserCarts
+from django.forms import ModelForm
 
 
 class NewUserForm(UserCreationForm):
@@ -19,8 +19,8 @@ class NewUserForm(UserCreationForm):
 			user.save()
 		return user
 
-class AddPost(forms.Form):
-	product = forms.ModelChoiceField(queryset=Product.objects.all())
-	name = forms.CharField(max_length=50)
-	price = forms.IntegerField()
-	img = forms.ImageField()
+
+class AddCart(ModelForm):
+	class Meta:
+		model = UserCarts
+		fields = '__all__'

@@ -3,7 +3,7 @@
 {% block content %}
 
     <h1>{{ ca.name }}</h1>
-    <p>{{ ca.about }}</p>
-    
-    <a href="{% url 'home' %}"><Button>Go To Home Page</Button></a> 
+    <p>{{ ca.price }}</p>
+    <img src="{{ ca.img.url }}" width="500px" alt="">
+    <a href="{% url 'home' %}"><Button>Go To Home Page</Button></a>
 {% endblock %}
